@@ -442,9 +442,9 @@ See the [example project](entry) and associated [layouts folder](entry/src/main/
 
 - - - -
 
-![MaterialFancyButtons Android](/images/sample_screenshot1.png)![MaterialFancyButtons Android](/images/sample_screenshot2.png)
+![MaterialFancyButtons](/images/sample_screenshot1.png)![MaterialFancyButtons](/images/sample_screenshot2.png)
 
-![MaterialFancyButtons Android](/images/sample_screenshot3.png)![MaterialFancyButtons Android](/images/sample_screenshot4.png)
+![MaterialFancyButtons](/images/sample_screenshot3.png)![MaterialFancyButtons](/images/sample_screenshot4.png)
 
 ### FAQ
 
