@@ -2,18 +2,18 @@ package com.rilixtech.themifyiconstypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the ThemifyIcons font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the ThemifyIcons font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class ThemifyIcons implements ITypeface {
+public class ThemifyIcons implements MfbTypeface {
     private static final String TTF_FILE = "themify-icons-v0.1.2.ttf";
     private static final String THEMIFY_ICONS_PREFIX = "THEI";
     public static final String THEMIFY_ICONS_NAME = "Themify Icons";
@@ -29,11 +29,11 @@ public class ThemifyIcons implements ITypeface {
     private static HashMap<String, Character> themifyIconsCharMap;
 
     /**
-     * ThemifyIcons IIcon object corresponding to this typeface for the given key.
+     * ThemifyIcons MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which ThemifyIcons IIcon is to be retrieved.
+     * @param key Key for which ThemifyIcons MfbIcon is to be retrieved.
      */
-    @Override public IIcon getIcon(String key) {
+    @Override public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -126,9 +126,9 @@ public class ThemifyIcons implements ITypeface {
     }
 
     /**
-     * Enumerates all the supported Custom Icon Unicode characters by ThemifyIcons ITypeface.
+     * Enumerates all the supported Custom Icon Unicode characters by ThemifyIcons MfbTypeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         THEI_WAND((char) 0xe600),
         THEI_VOLUME((char) 0xe601),
         THEI_USER((char) 0xe602),
@@ -500,10 +500,10 @@ public class ThemifyIcons implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface themifyIconsTypeface;
+        private static MfbTypeface themifyIconsTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (themifyIconsTypeface == null) {
                 setTypeface(new ThemifyIcons());
             }

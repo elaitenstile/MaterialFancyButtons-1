@@ -2,18 +2,18 @@ package com.rilixtech.weathericonstypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the WeatherIcons font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the WeatherIcons font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class WeatherIcons implements ITypeface {
+public class WeatherIcons implements MfbTypeface {
     private static final String TTF_FILE = "weather-icons-v2.0.10.ttf";
     private static final String WEATHER_ICONS_PREFIX = "WICI";
     public static final String WEATHER_ICONS_NAME = "Weather Icons";
@@ -30,11 +30,11 @@ public class WeatherIcons implements ITypeface {
     private static HashMap<String, Character> weatherIconsCharMap;
 
     /**
-     * WeatherIcons IIcon object corresponding to this typeface for the given key.
+     * WeatherIcons MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which WeatherIcons IIcon is to be retrieved.
+     * @param key Key for which WeatherIcons MfbIcon is to be retrieved.
      */
-    @Override public IIcon getIcon(String key) {
+    @Override public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -127,9 +127,9 @@ public class WeatherIcons implements ITypeface {
     }
 
     /**
-     * Enumerates all the supported Custom Icon Unicode characters by WeatherIcons ITypeface.
+     * Enumerates all the supported Custom Icon Unicode characters by WeatherIcons MfbTypeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         WICI_DAY_SUNNY((char) 0xf00d),
         WICI_DAY_CLOUDY((char) 0xf002),
         WICI_DAY_CLOUDY_GUSTS((char) 0xf000),
@@ -740,10 +740,10 @@ public class WeatherIcons implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface weatherIconsTypeface;
+        private static MfbTypeface weatherIconsTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (weatherIconsTypeface == null) {
                 setTypeface(new WeatherIcons());
             }

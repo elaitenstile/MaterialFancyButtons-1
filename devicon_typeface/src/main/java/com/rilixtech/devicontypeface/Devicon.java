@@ -18,18 +18,18 @@ package com.rilixtech.devicontypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the Devicon font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the Devicon font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class Devicon implements ITypeface {
+public class Devicon implements MfbTypeface {
     private static final String TTF_FILE = "devicon-font-v2.0.0.1.ttf";
     private static final String DEVICON_PREFIX = "DEVI";
     public static final String DEVICON_NAME = "DevIcon";
@@ -44,11 +44,11 @@ public class Devicon implements ITypeface {
     private static HashMap<String, Character> deviconCharMap;
 
     /**
-     * Devicon IIcon object corresponding to this typeface for the given key.
+     * Devicon MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which Devicon IIcon is to be retrieved.
+     * @param key Key for which Devicon MfbIcon is to be retrieved.
      */
-    @Override public IIcon getIcon(String key) {
+    @Override public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -153,7 +153,7 @@ public class Devicon implements ITypeface {
     /**
      * Enumerates all the supported Custom Icon Unicode characters by Devicon typeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         DEVI_SSH_PLAIN_WORDMARK((char) 0xe900),
         DEVI_SSH_PLAIN((char) 0xe901),
         DEVI_SOURCETREE_PLAIN_WORDMARK((char) 0xe902),
@@ -334,10 +334,10 @@ public class Devicon implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface deviconTypeface;
+        private static MfbTypeface deviconTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (deviconTypeface == null) {
                 setDeviconTypeface(new Devicon());
             }

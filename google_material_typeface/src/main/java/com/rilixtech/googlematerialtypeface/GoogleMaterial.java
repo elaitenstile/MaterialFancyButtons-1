@@ -2,18 +2,18 @@ package com.rilixtech.googlematerialtypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the GoogleMaterial font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the GoogleMaterial font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class GoogleMaterial implements ITypeface {
+public class GoogleMaterial implements MfbTypeface {
     private static final String TTF_FILE = "googlematerial.ttf";
     private static final String GOOGLE_MATERIAL_PREFIX = "GMDI";
     public static final String GOOGLE_MATERIAL_NAME = "Google Material";
@@ -30,11 +30,11 @@ public class GoogleMaterial implements ITypeface {
 
 
     /**
-     * GoogleMaterial IIcon object corresponding to this typeface for the given key.
+     * GoogleMaterial MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which GoogleMaterial IIcon is to be retrieved.
+     * @param key Key for which GoogleMaterial MfbIcon is to be retrieved.
      */
-    @Override public IIcon getIcon(String key) {
+    @Override public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -127,9 +127,9 @@ public class GoogleMaterial implements ITypeface {
     }
 
     /**
-     * Enumerates all the supported Custom Icon Unicode characters by GoogleMaterial ITypeface.
+     * Enumerates all the supported Custom Icon Unicode characters by GoogleMaterial MfbTypeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         GMDI_3D_ROTATION((char) 0xe84d),
         GMDI_AC_UNIT((char) 0xeb3b),
         GMDI_ACCESS_ALARM((char) 0xe190),
@@ -1079,10 +1079,10 @@ public class GoogleMaterial implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface googleMaterialTypeface;
+        private static MfbTypeface googleMaterialTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (googleMaterialTypeface == null) {
                 setTypeface(new GoogleMaterial());
             }

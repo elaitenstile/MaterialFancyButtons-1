@@ -2,18 +2,18 @@ package com.rilixtech.dripiconstypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the Dripicons font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the Dripicons font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class Dripicons implements ITypeface {
+public class Dripicons implements MfbTypeface {
     private static final String TTF_FILE = "dripicons-v2.ttf";
     private static final String DRIPICONS_PREFIX = "DRPI";
     public static final String DRIPICONS_NAME = "Dripicons";
@@ -29,11 +29,11 @@ public class Dripicons implements ITypeface {
     private static HashMap<String, Character> dripiconsCharMap;
 
     /**
-     * Dripicons IIcon object corresponding to this typeface for the given key.
+     * Dripicons MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which Dripicons IIcon is to be retrieved.
+     * @param key Key for which Dripicons MfbIcon is to be retrieved.
      */
-    @Override public IIcon getIcon(String key) {
+    @Override public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -132,9 +132,9 @@ public class Dripicons implements ITypeface {
     private static final char BACK_SLASH = 0x005C;
 
     /**
-     * Enumerates all the supported Custom Icon Unicode characters by Dripicons ITypeface.
+     * Enumerates all the supported Custom Icon Unicode characters by Dripicons MfbTypeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         DRPI_ALARM((char) 0x0061),
         DRPI_ALIGN_CENTER((char) 0x0062),
         DRPI_ALIGN_JUSTIFY((char) 0x0063),
@@ -355,10 +355,10 @@ public class Dripicons implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface dripiconsTypeface;
+        private static MfbTypeface dripiconsTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (dripiconsTypeface == null) {
                 setTypeface(new Dripicons());
             }

@@ -2,18 +2,18 @@ package com.rilixtech.meteoconstypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the Meteocons font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the Meteocons font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class Meteocons implements ITypeface {
+public class Meteocons implements MfbTypeface {
     private static final String TTF_FILE = "meteocons.ttf";
     private static final String METEOCONS_PREFIX = "METI";
     public static final String METEOCONS_NAME = "Meteocons";
@@ -34,12 +34,12 @@ public class Meteocons implements ITypeface {
     private static HashMap<String, Character> meteoconsCharMap;
 
     /**
-     * Meteocons IIcon object corresponding to this typeface for the given key.
+     * Meteocons MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which Meteocons IIcon is to be retrieved.
+     * @param key Key for which Meteocons MfbIcon is to be retrieved.
      */
     @Override
-    public IIcon getIcon(String key) {
+    public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -138,9 +138,9 @@ public class Meteocons implements ITypeface {
     }
 
     /**
-     * Enumerates all the supported Custom Icon Unicode characters by Meteocons ITypeface.
+     * Enumerates all the supported Custom Icon Unicode characters by Meteocons MfbTypeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         METI_WINDY_RAIN_INV((char) 0xe800),
         METI_SNOW_INV((char) 0xe801),
         METI_SNOW_HEAVY_INV((char) 0xe802),
@@ -208,10 +208,10 @@ public class Meteocons implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface meteoconsTypeface;
+        private static MfbTypeface meteoconsTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (meteoconsTypeface == null) {
                 setTypeface(new Meteocons());
             }

@@ -2,18 +2,18 @@ package com.rilixtech.foundationiconstypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the FoundationIcons font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the FoundationIcons font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class FoundationIcons implements ITypeface {
+public class FoundationIcons implements MfbTypeface {
     private static final String TTF_FILE = "foundation-icons-font-v3.0.0.1.ttf";
     private static final String FOUNDATION_ICONS_PREFIX = "FOUI";
     public static final String FOUNDATION_ICONS_NAME = "Foundation Icons";
@@ -28,11 +28,11 @@ public class FoundationIcons implements ITypeface {
     private static HashMap<String, Character> foundationIconsCharMap;
 
     /**
-     * FoundationIcons IIcon object corresponding to this typeface for the given key.
+     * FoundationIcons MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which FoundationIcons IIcon is to be retrieved.
+     * @param key Key for which FoundationIcons MfbIcon is to be retrieved.
      */
-    @Override public IIcon getIcon(String key) {
+    @Override public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -125,9 +125,9 @@ public class FoundationIcons implements ITypeface {
     }
 
     /**
-     * Enumerates all the supported Custom Icon Unicode characters by FoundationIcons ITypeface.
+     * Enumerates all the supported Custom Icon Unicode characters by FoundationIcons MfbTypeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         FOUI_ADDRESS_BOOK((char) 0xf100),
         FOUI_ALERT((char) 0xf101),
         FOUI_ALIGN_CENTER((char) 0xf102),
@@ -430,10 +430,10 @@ public class FoundationIcons implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface foundationIconsTypeface;
+        private static MfbTypeface foundationIconsTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (foundationIconsTypeface == null) {
                 setTypeface(new FoundationIcons());
             }

@@ -2,18 +2,18 @@ package com.rilixtech.vaadiniconstypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the VaadinIcons font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the VaadinIcons font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class VaadinIcons implements ITypeface {
+public class VaadinIcons implements MfbTypeface {
     private static final String TTF_FILE = "vaadin-icons-v4.1.0.ttf";
     private static final String VAADIN_ICONS_PREFIX = "VAAI";
     public static final String VAADIN_ICONS_NAME = "Vaadin Icons";
@@ -29,11 +29,11 @@ public class VaadinIcons implements ITypeface {
     private static HashMap<String, Character> vaadinIconsCharMap;
 
     /**
-     * VaadinIcons IIcon object corresponding to this typeface for the given key.
+     * VaadinIcons MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which VaadinIcons IIcon is to be retrieved.
+     * @param key Key for which VaadinIcons MfbIcon is to be retrieved.
      */
-    @Override public IIcon getIcon(String key) {
+    @Override public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -126,9 +126,9 @@ public class VaadinIcons implements ITypeface {
     }
 
     /**
-     * Enumerates all the supported Custom Icon Unicode characters by VaadinIcons ITypeface.
+     * Enumerates all the supported Custom Icon Unicode characters by VaadinIcons MfbTypeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         VAAI_ABACUS((char) 0xe682),
         VAAI_ABSOLUTE_POSITION((char) 0xe61e),
         VAAI_ACCESSIBILITY((char) 0xe683),
@@ -785,10 +785,10 @@ public class VaadinIcons implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface vaadinIconsTypeface;
+        private static MfbTypeface vaadinIconsTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (vaadinIconsTypeface == null) {
                 setTypeface(new VaadinIcons());
             }

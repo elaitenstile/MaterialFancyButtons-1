@@ -2,18 +2,18 @@ package com.rilixtech.ioniconstypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the Ionicons font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the Ionicons font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class Ionicons implements ITypeface {
+public class Ionicons implements MfbTypeface {
     private static final String TTF_FILE = "ionicons.ttf";
     private static final String IONICONS_PREFIX = "IONI";
     public static final String IONICONS_NAME = "Ionicons";
@@ -28,11 +28,11 @@ public class Ionicons implements ITypeface {
     private static HashMap<String, Character> ioniconsCharMap;
 
     /**
-     * Ionicons IIcon object corresponding to this typeface for the given key.
+     * Ionicons MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which Ionicons IIcon is to be retrieved.
+     * @param key Key for which Ionicons MfbIcon is to be retrieved.
      */
-    @Override public IIcon getIcon(String key) {
+    @Override public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -129,9 +129,9 @@ public class Ionicons implements ITypeface {
     }
 
     /**
-     * Enumerates all the supported Custom Icon Unicode characters by Ionicons ITypeface.
+     * Enumerates all the supported Custom Icon Unicode characters by Ionicons MfbTypeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         IONI_ALERT((char) 0xf101),
         IONI_ALERT_CIRCLED((char) 0xf100),
         IONI_APERTURE((char) 0xf313),
@@ -755,10 +755,10 @@ public class Ionicons implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface ioniconsTypeface;
+        private static MfbTypeface ioniconsTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (ioniconsTypeface == null) {
                 setTypeface(new Ionicons());
             }

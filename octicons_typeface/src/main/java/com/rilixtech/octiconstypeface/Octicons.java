@@ -2,18 +2,18 @@ package com.rilixtech.octiconstypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the Octicons font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the Octicons font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class Octicons implements ITypeface {
+public class Octicons implements MfbTypeface {
     private static final String TTF_FILE = "octicons-v3.2.0.ttf";
     private static final String OCTICONS_PREFIX = "OCTI";
     public static final String OCTICONS_NAME = "Octicons";
@@ -28,11 +28,11 @@ public class Octicons implements ITypeface {
     private static HashMap<String, Character> octiconsCharMap;
 
     /**
-     * Octicons IIcon object corresponding to this typeface for the given key.
+     * Octicons MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which Octicons IIcon is to be retrieved.
+     * @param key Key for which Octicons MfbIcon is to be retrieved.
      */
-    @Override public IIcon getIcon(String key) {
+    @Override public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -135,9 +135,9 @@ public class Octicons implements ITypeface {
     }
 
     /**
-     * Enumerates all the supported Custom Icon Unicode characters by Octicons ITypeface.
+     * Enumerates all the supported Custom Icon Unicode characters by Octicons MfbTypeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         //Octicons
         OCTI_ALERT((char) 0xf02d),
         OCTI_ARROW_DOWN((char) 0xf03f),
@@ -352,10 +352,10 @@ public class Octicons implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface octiconsTypeface;
+        private static MfbTypeface octiconsTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (octiconsTypeface == null) {
                 setTypeface(new Octicons());
             }

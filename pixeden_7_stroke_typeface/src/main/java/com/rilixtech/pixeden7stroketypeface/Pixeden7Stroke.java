@@ -2,18 +2,18 @@ package com.rilixtech.pixeden7stroketypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the Pixeden7Stroke font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the Pixeden7Stroke font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class Pixeden7Stroke implements ITypeface {
+public class Pixeden7Stroke implements MfbTypeface {
     private static final String TTF_FILE = "pixeden-7-stroke-font-v1.2.0.ttf";
     private static final String PIXEDEN_7_STROKE_PREFIX = "PE7I";
     public static final String PIXEDEN_7_STROKE_NAME = "Pixeden 7 Stroke";
@@ -29,11 +29,11 @@ public class Pixeden7Stroke implements ITypeface {
     private static HashMap<String, Character> pixeden7StrokeCharMap;
 
     /**
-     * Pixeden7Stroke IIcon object corresponding to this typeface for the given key.
+     * Pixeden7Stroke MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which Pixeden7Stroke IIcon is to be retrieved.
+     * @param key Key for which Pixeden7Stroke MfbIcon is to be retrieved.
      */
-    @Override public IIcon getIcon(String key) {
+    @Override public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -131,9 +131,9 @@ public class Pixeden7Stroke implements ITypeface {
     }
 
     /**
-     * Enumerates all the supported Custom Icon Unicode characters by Pixeden7Stroke ITypeface.
+     * Enumerates all the supported Custom Icon Unicode characters by Pixeden7Stroke MfbTypeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         PE7I_7S_ALBUM((char) 0xe6aa),
         PE7I_7S_ARC((char) 0xe6ab),
         PE7I_7S_BACK_2((char) 0xe6ac),
@@ -356,10 +356,10 @@ public class Pixeden7Stroke implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface pixeden7StrokeTypeface;
+        private static MfbTypeface pixeden7StrokeTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (pixeden7StrokeTypeface == null) {
                 setTypeface(new Pixeden7Stroke());
             }

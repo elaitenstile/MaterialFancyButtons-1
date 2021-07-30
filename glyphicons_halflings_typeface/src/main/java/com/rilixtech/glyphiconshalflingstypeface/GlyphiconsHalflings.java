@@ -2,18 +2,18 @@ package com.rilixtech.glyphiconshalflingstypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the GlyphiconsHalflings font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the GlyphiconsHalflings font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class GlyphiconsHalflings implements ITypeface {
+public class GlyphiconsHalflings implements MfbTypeface {
     private static final String TTF_FILE = "glyphicons-halflings-regular.ttf";
     private static final String GLYPHICONS_HALFLINGS_PREFIX = "GLYI";
     public static final String GLYPHICONS_HALFLINGS_NAME = "Glyphicons Halflings";
@@ -29,11 +29,11 @@ public class GlyphiconsHalflings implements ITypeface {
     private static HashMap<String, Character> glyphiconsHalflingsCharMap;
 
     /**
-     * GlyphiconsHalflings IIcon object corresponding to this typeface for the given key.
+     * GlyphiconsHalflings MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which GlyphiconsHalflings IIcon is to be retrieved.
+     * @param key Key for which GlyphiconsHalflings MfbIcon is to be retrieved.
      */
-    @Override public IIcon getIcon(String key) {
+    @Override public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -129,9 +129,9 @@ public class GlyphiconsHalflings implements ITypeface {
     }
 
     /**
-     * Enumerates all the supported Custom Icon Unicode characters by GlyphiconsHalflings ITypeface.
+     * Enumerates all the supported Custom Icon Unicode characters by GlyphiconsHalflings MfbTypeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         GLYI_ASTERISK((char) 0x002a),
         GLYI_PLUS((char) 0x002b),
         GLYI_EUR((char) 0x20ac),
@@ -414,10 +414,10 @@ public class GlyphiconsHalflings implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface glyphiconsHalflingsTypeface;
+        private static MfbTypeface glyphiconsHalflingsTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (glyphiconsHalflingsTypeface == null) {
                 setTypeface(new GlyphiconsHalflings());
             }

@@ -2,18 +2,18 @@ package com.rilixtech.fontawesometypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the FontAwesome font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the FontAwesome font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class FontAwesome implements ITypeface {
+public class FontAwesome implements MfbTypeface {
     private static final String TTF_FILE = "fontawesome-font-v4.7.ttf";
     private static final String FONT_AWESOME_PREFIX = "FAWI";
     public static final String FONT_AWESOME_NAME = "FontAwesome";
@@ -31,11 +31,11 @@ public class FontAwesome implements ITypeface {
     private static HashMap<String, Character> fontAwesomeCharMap;
 
     /**
-     * FontAwesome IIcon object corresponding to this typeface for the given key.
+     * FontAwesome MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which FontAwesome IIcon is to be retrieved.
+     * @param key Key for which FontAwesome MfbIcon is to be retrieved.
      */
-    @Override public IIcon getIcon(String key) {
+    @Override public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -133,9 +133,9 @@ public class FontAwesome implements ITypeface {
     }
 
     /**
-     * Enumerates all the supported Custom Icon Unicode characters by FontAwesome ITypeface.
+     * Enumerates all the supported Custom Icon Unicode characters by FontAwesome MfbTypeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         FAWI_GLASS((char) 0xf000),
         FAWI_MUSIC((char) 0xf001),
         FAWI_SEARCH((char) 0xf002),
@@ -830,10 +830,10 @@ public class FontAwesome implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface fontAwesomeTypeface;
+        private static MfbTypeface fontAwesomeTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (fontAwesomeTypeface == null) {
                 setTypeface(new FontAwesome());
             }

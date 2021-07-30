@@ -2,18 +2,18 @@ package com.rilixtech.openiconictypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the OpenIconic font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the OpenIconic font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class OpenIconic implements ITypeface {
+public class OpenIconic implements MfbTypeface {
     private static final String TTF_FILE = "open-iconic-1.1.1.ttf";
     private static final String OPEN_ICONIC_PREFIX = "OPIC";
     public static final String OPEN_ICONIC_NAME = "Open Iconic";
@@ -28,11 +28,11 @@ public class OpenIconic implements ITypeface {
     private static HashMap<String, Character> openIconicCharMap;
 
     /**
-     * OpenIconic IIcon object corresponding to this typeface for the given key.
+     * OpenIconic MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which OpenIconic IIcon is to be retrieved.
+     * @param key Key for which OpenIconic MfbIcon is to be retrieved.
      */
-    @Override public IIcon getIcon(String key) {
+    @Override public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -134,9 +134,9 @@ public class OpenIconic implements ITypeface {
     }
 
     /**
-     * Enumerates all the supported Custom Icon Unicode characters by OpenIconic ITypeface.
+     * Enumerates all the supported Custom Icon Unicode characters by OpenIconic MfbTypeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         //Open Iconic
         OPIC_ACCOUNT_LOGIN((char) 0xe000),
         OPIC_ACCOUNT_LOGOUT((char) 0xe001),
@@ -381,10 +381,10 @@ public class OpenIconic implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface openIconicTypeface;
+        private static MfbTypeface openIconicTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (openIconicTypeface == null) {
                 setTypeface(new OpenIconic());
             }

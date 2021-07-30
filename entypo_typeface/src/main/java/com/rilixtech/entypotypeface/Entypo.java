@@ -2,18 +2,18 @@ package com.rilixtech.entypotypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the Entypo font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the Entypo font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class Entypo implements ITypeface {
+public class Entypo implements MfbTypeface {
     private static final String TTF_FILE = "entypo-font-v1.0.0.1.ttf";
     private static final String ENTYPO_PREFIX = "ENTI";
     public static final String ENTYPO_NAME = "Entypo";
@@ -29,12 +29,12 @@ public class Entypo implements ITypeface {
     private static HashMap<String, Character> entypoCharMap;
 
     /**
-     * Entypo IIcon object corresponding to this typeface for the given key.
+     * Entypo MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which Entypo IIcon is to be retrieved.
+     * @param key Key for which Entypo MfbIcon is to be retrieved.
      */
     @Override
-    public IIcon getIcon(String key) {
+    public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -142,9 +142,9 @@ public class Entypo implements ITypeface {
     }
 
     /**
-     * Enumerates all the supported Custom Icon Unicode characters by Entypo ITypeface.
+     * Enumerates all the supported Custom Icon Unicode characters by Entypo MfbTypeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         ENTI_ADD_TO_LIST((char) 0xe900),
         ENTI_CLASSIC_COMPUTER((char) 0xe901),
         ENTI_CONTROLLER_FAST_BACKWARD((char) 0xe902),
@@ -550,10 +550,10 @@ public class Entypo implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface entypoTypeface;
+        private static MfbTypeface entypoTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (entypoTypeface == null) {
                 setTypeface(new Entypo());
             }

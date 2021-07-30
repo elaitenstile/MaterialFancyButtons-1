@@ -2,18 +2,18 @@ package com.rilixtech.picoltypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the Picol Icon font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the Picol Icon font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class Picol implements ITypeface {
+public class Picol implements MfbTypeface {
     private static final String TTF_FILE = "picol-v1.1.ttf";
     private static final String PICOL_ICON_PREFIX = "PICI";
     public static final String PICOL_ICON_NAME = "Picol Icon";
@@ -29,11 +29,11 @@ public class Picol implements ITypeface {
     private static HashMap<String, Character> picolIconCharMap;
 
     /**
-     * Picol Icon IIcon object corresponding to this typeface for the given key.
+     * Picol Icon MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which Picol Icon IIcon is to be retrieved.
+     * @param key Key for which Picol Icon MfbIcon is to be retrieved.
      */
-    @Override public IIcon getIcon(String key) {
+    @Override public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -126,9 +126,9 @@ public class Picol implements ITypeface {
     }
 
     /**
-     * Enumerates all the supported Custom Icon Unicode characters by Picol Icon ITypeface.
+     * Enumerates all the supported Custom Icon Unicode characters by Picol Icon MfbTypeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         PICI_ACCEPT((char) 0xe800),
         PICI_ZOOM_OUT((char) 0xea24),
         PICI_AGENT((char) 0xe802),
@@ -698,10 +698,10 @@ public class Picol implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface picolIconTypeface;
+        private static MfbTypeface picolIconTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (picolIconTypeface == null) {
                 setTypeface(new Picol());
             }

@@ -2,18 +2,18 @@ package com.rilixtech.communitymaterialtypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the Community Material Design font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the Community Material Design font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class CommunityMaterial implements ITypeface {
+public class CommunityMaterial implements MfbTypeface {
     private static final String TTF_FILE = "communitymaterial-font-v1.9.32.ttf";
     public static final String COMMUNITY_MATERIAL_PREFIX = "CMDI";
     public static final String COMMUNITY_MATERIAL_DESIGN_NAME = "Community Material Design";
@@ -30,12 +30,12 @@ public class CommunityMaterial implements ITypeface {
     private static HashMap<String, Character> communityMaterialCharMap;
 
     /**
-     * Community Material IIcon object corresponding to this typeface for the given key.
+     * Community Material MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which Community Material IIcon is to be retrieved.
+     * @param key Key for which Community Material MfbIcon is to be retrieved.
      */
     @Override
-    public IIcon getIcon(String key) {
+    public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -140,9 +140,9 @@ public class CommunityMaterial implements ITypeface {
     }
 
     /**
-     * Enumerates all the supported Custom Icon Unicode characters by Community Material ITypeface.
+     * Enumerates all the supported Custom Icon Unicode characters by Community Material MfbTypeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         // Material design icons (v1.9.32)
         CMDI_ACCESS_POINT((char) 0xF002),
         CMDI_ACCESS_POINT_NETWORK((char) 0xF003),
@@ -2094,10 +2094,10 @@ public class CommunityMaterial implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface communityMaterialTypeface;
+        private static MfbTypeface communityMaterialTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (communityMaterialTypeface == null) {
                 setCommunityMaterialTypeface(new CommunityMaterial());
             }

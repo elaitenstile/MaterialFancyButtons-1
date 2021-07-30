@@ -32,7 +32,7 @@ import com.rilixtech.ioniconstypeface.Ionicons;
 import com.rilixtech.materialdesigniconictypeface.MaterialDesignIconic;
 import com.rilixtech.materialfancybutton.MaterialFancyButton;
 import com.rilixtech.materialfancybutton.ResourceTable;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
 import com.rilixtech.meteoconstypeface.Meteocons;
 import com.rilixtech.mfglabsiconsettypeface.MfgLabsIconset;
 import com.rilixtech.mobiriseiconstypeface.MobiriseIcons;
@@ -85,7 +85,7 @@ public class ProgramButtonsSlice extends AbilitySlice {
         addButtonToLayout(WeatherIcons.Icon.WICI_EARTHQUAKE);
     }
 
-    private void addButtonToLayout(IIcon icon) {
+    private void addButtonToLayout(MfbIcon icon) {
         String buttonText = String.format(BUTTON_TEXT_FORMAT, icon.getTypeface().getFontName());
         MaterialFancyButton materialFancyButton = new MaterialFancyButton(this);
         materialFancyButton.setIcon(icon);

@@ -1,7 +1,9 @@
 package com.rilixtech.materialfancybutton.utils;
 
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
+
 /**
- * Utility class containing methods to handle the different {@link com.rilixtech.materialfancybutton.typeface.ITypeface}
+ * Utility class containing methods to handle the different {@link MfbTypeface}
  * implementations existing in the various loaded modules.
  */
 public class GenericsUtil {
@@ -34,7 +36,7 @@ public class GenericsUtil {
     };
 
     /**
-     * Find the full class names for each of the ITypeface classes defined in each typeface module.
+     * Find the full class names for each of the MfbTypeface classes defined in each typeface module.
      */
     public static String[] getFields() {
         return SUPPORTED_FONT_CLASSES;

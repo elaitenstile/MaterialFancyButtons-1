@@ -9,9 +9,9 @@ import java.util.HashMap;
 /**
  * Created by mikepenz on 01.11.14.
  */
-public interface ITypeface {
+public interface MfbTypeface {
 
-    IIcon getIcon(String key);
+    MfbIcon getIcon(String key);
 
     HashMap<String, Character> getCharacters();
 

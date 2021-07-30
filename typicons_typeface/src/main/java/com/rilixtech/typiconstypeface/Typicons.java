@@ -2,18 +2,18 @@ package com.rilixtech.typiconstypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the Typicons font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the Typicons font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class Typicons implements ITypeface {
+public class Typicons implements MfbTypeface {
     private static final String TTF_FILE = "typicons-font-v2.0.7.1.ttf";
     private static final String TYPICONS_PREFIX = "TYPI";
     public static final String TYPICONS_NAME = "Typicons";
@@ -28,11 +28,11 @@ public class Typicons implements ITypeface {
     private static HashMap<String, Character> typiconsCharMap;
 
     /**
-     * Typicons IIcon object corresponding to this typeface for the given key.
+     * Typicons MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which Typicons IIcon is to be retrieved.
+     * @param key Key for which Typicons MfbIcon is to be retrieved.
      */
-    @Override public IIcon getIcon(String key) {
+    @Override public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -134,9 +134,9 @@ public class Typicons implements ITypeface {
     }
 
     /**
-     * Enumerates all the supported Custom Icon Unicode characters by Typicons ITypeface.
+     * Enumerates all the supported Custom Icon Unicode characters by Typicons MfbTypeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         TYPI_ADJUST_BRIGHTNESS((char) 0xe000),
         TYPI_ADJUST_CONTRAST((char) 0xe001),
         TYPI_ANCHOR_OUTLINE((char) 0xe002),
@@ -492,10 +492,10 @@ public class Typicons implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface typiconsTypeface;
+        private static MfbTypeface typiconsTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (typiconsTypeface == null) {
                 setTypeface(new Typicons());
             }

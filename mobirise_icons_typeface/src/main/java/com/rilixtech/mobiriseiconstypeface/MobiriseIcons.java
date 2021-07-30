@@ -2,18 +2,18 @@ package com.rilixtech.mobiriseiconstypeface;
 
 import ohos.agp.text.Font;
 import ohos.app.AbilityContext;
-import com.rilixtech.materialfancybutton.typeface.IIcon;
-import com.rilixtech.materialfancybutton.typeface.ITypeface;
+import com.rilixtech.materialfancybutton.typeface.MfbIcon;
+import com.rilixtech.materialfancybutton.typeface.MfbTypeface;
 import com.rilixtech.materialfancybutton.utils.FontUtil;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * ITypeface implementation using the MobiriseIcons font. It hosts a variety of icons that can be used by
+ * MfbTypeface implementation using the MobiriseIcons font. It hosts a variety of icons that can be used by
  * the MaterialFancyButton Components.
  */
-public class MobiriseIcons implements ITypeface {
+public class MobiriseIcons implements MfbTypeface {
     private static final String TTF_FILE = "mobirise-icons-v1.0.0.ttf";
     private static final String MOBIRISE_ICONS_PREFIX = "MBRI";
     public static final String MOBIRISE_ICONS_NAME = "Mobirise Icons";
@@ -29,11 +29,11 @@ public class MobiriseIcons implements ITypeface {
     private static HashMap<String, Character> mobiriseIconsCharMap;
 
     /**
-     * MobiriseIcons IIcon object corresponding to this typeface for the given key.
+     * MobiriseIcons MfbIcon object corresponding to this typeface for the given key.
      *
-     * @param key Key for which MobiriseIcons IIcon is to be retrieved.
+     * @param key Key for which MobiriseIcons MfbIcon is to be retrieved.
      */
-    @Override public IIcon getIcon(String key) {
+    @Override public MfbIcon getIcon(String key) {
         return Icon.valueOf(key);
     }
 
@@ -126,9 +126,9 @@ public class MobiriseIcons implements ITypeface {
     }
 
     /**
-     * Enumerates all the supported Custom Icon Unicode characters by MobiriseIcons ITypeface.
+     * Enumerates all the supported Custom Icon Unicode characters by MobiriseIcons MfbTypeface.
      */
-    public enum Icon implements IIcon {
+    public enum Icon implements MfbIcon {
         MBRI_ADD_SUBMENU((char) 0xe900),
         MBRI_ALERT((char) 0xe901),
         MBRI_ALIGN_CENTER((char) 0xe902),
@@ -298,10 +298,10 @@ public class MobiriseIcons implements ITypeface {
         }
 
         // remember the typeface so we can use it later
-        private static ITypeface mobiriseIconsTypeface;
+        private static MfbTypeface mobiriseIconsTypeface;
 
         @Override
-        public ITypeface getTypeface() {
+        public MfbTypeface getTypeface() {
             if (mobiriseIconsTypeface == null) {
                 setTypeface(new MobiriseIcons());
             }
