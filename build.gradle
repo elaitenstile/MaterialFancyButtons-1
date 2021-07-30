@@ -45,27 +45,27 @@ allprojects {
         configFile file("config/checkstyle.xml")
         source 'entry/src/main/java'
         source 'materialfancybutton/src/main/java'
-        source 'communitymaterialtypeface/src/main/java'
-        source 'devicontypeface/src/main/java'
-        source 'dripiconstypeface/src/main/java'
-        source 'entypotypeface/src/main/java'
-        source 'fontawesometypeface/src/main/java'
-        source 'foundationiconstypeface/src/main/java'
-        source 'glyphiconshalflingstypeface/src/main/java'
-        source 'googlematerialtypeface/src/main/java'
-        source 'ioniconstypeface/src/main/java'
-        source 'materialdesigniconictypeface/src/main/java'
-        source 'meteoconstypeface/src/main/java'
-        source 'mfglabsiconsettypeface/src/main/java'
-        source 'mobiriseiconstypeface/src/main/java'
-        source 'octiconstypeface/src/main/java'
-        source 'openiconictypeface/src/main/java'
-        source 'picoltypeface/src/main/java'
-        source 'pixeden7stroketypeface/src/main/java'
-        source 'themifyiconstypeface/src/main/java'
-        source 'typiconstypeface/src/main/java'
-        source 'vaadiniconstypeface/src/main/java'
-        source 'weathericonstypeface/src/main/java'
+        source 'community_material_typeface/src/main/java'
+        source 'devicon_typeface/src/main/java'
+        source 'dripicons_typeface/src/main/java'
+        source 'entypo_typeface/src/main/java'
+        source 'fontawesome_typeface/src/main/java'
+        source 'foundation_icons_typeface/src/main/java'
+        source 'glyphicons_halflings_typeface/src/main/java'
+        source 'google_material_typeface/src/main/java'
+        source 'ionicons_typeface/src/main/java'
+        source 'material_design_iconic_typeface/src/main/java'
+        source 'meteocons_typeface/src/main/java'
+        source 'mfglabs_iconset_typeface/src/main/java'
+        source 'mobirise_icons_typeface/src/main/java'
+        source 'octicons_typeface/src/main/java'
+        source 'open_iconic_typeface/src/main/java'
+        source 'picol_typeface/src/main/java'
+        source 'pixeden_7_stroke_typeface/src/main/java'
+        source 'themify_icons_typeface/src/main/java'
+        source 'typicons_typeface/src/main/java'
+        source 'vaadin_icons_typeface/src/main/java'
+        source 'weather_icons_typeface/src/main/java'
         include '**/*.java'
 
         // empty classpath
@@ -82,8 +82,8 @@ sonarqube {
         property "sonar.projectKey", "applibgroup_MaterialFancyButtons"
         property "sonar.organization", "applibgroup"
         property "sonar.host.url", "https://sonarcloud.io"
-        property "sonar.sources", "entry,materialfancybutton,communitymaterialtypeface,devicontypeface,dripiconstypeface,entypotypeface,fontawesometypeface,foundationiconstypeface,glyphiconshalflingstypeface,googlematerialtypeface,ioniconstypeface,materialdesigniconictypeface,meteoconstypeface,mfglabsiconsettypeface,mobiriseiconstypeface,octiconstypeface,openiconictypeface,picoltypeface,pixeden7stroketypeface,themifyiconstypeface,typiconstypeface,vaadiniconstypeface,weathericonstypeface"
-        property "sonar.java.binaries", "entry/build,materialfancybutton/build,communitymaterialtypeface/build,devicontypeface/build,dripiconstypeface/build,entypotypeface/build,fontawesometypeface/build,foundationiconstypeface/build,glyphiconshalflingstypeface/build,googlematerialtypeface/build,ioniconstypeface/build,materialdesigniconictypeface/build,meteoconstypeface/build,mfglabsiconsettypeface/build,mobiriseiconstypeface/build,octiconstypeface/build,openiconictypeface/build,picoltypeface/build,pixeden7stroketypeface/build,themifyiconstypeface/build,typiconstypeface/build,vaadiniconstypeface/build,weathericonstypeface/build"
+        property "sonar.sources", "entry,materialfancybutton,community_material_typeface,devicon_typeface,dripicons_typeface,entypo_typeface,fontawesome_typeface,foundation_icons_typeface,glyphicons_halflings_typeface,google_material_typeface,ionicons_typeface,material_design_iconic_typeface,meteocons_typeface,mfglabs_iconset_typeface,mobirise_icons_typeface,octicons_typeface,open_iconic_typeface,picol_typeface,pixeden_7_stroke_typeface,themify_icons_typeface,typicons_typeface,vaadin_icons_typeface,weather_icons_typeface"
+        property "sonar.java.binaries", "entry/build,materialfancybutton/build,community_material_typeface/build,devicon_typeface/build,dripicons_typeface/build,entypo_typeface/build,fontawesome_typeface/build,foundation_icons_typeface/build,glyphicons_halflings_typeface/build,google_material_typeface/build,ionicons_typeface/build,material_design_iconic_typeface/build,meteocons_typeface/build,mfglabs_iconset_typeface/build,mobirise_icons_typeface/build,octicons_typeface/build,open_iconic_typeface/build,picol_typeface/build,pixeden_7_stroke_typeface/build,themify_icons_typeface/build,typicons_typeface/build,vaadin_icons_typeface/build,weather_icons_typeface/build"
         property "sonar.java.checkstyle.reportPaths", "build/reports/checkstyle/checkstyle.xml"
     }
 }
