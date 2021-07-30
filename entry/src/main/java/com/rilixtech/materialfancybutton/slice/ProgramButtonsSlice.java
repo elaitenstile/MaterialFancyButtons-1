@@ -20,6 +20,7 @@ import static ohos.agp.components.ComponentContainer.LayoutConfig.MATCH_CONTENT;
 import ohos.aafwk.ability.AbilitySlice;
 import ohos.aafwk.content.Intent;
 import ohos.agp.components.ComponentContainer;
+import ohos.agp.utils.Color;
 import com.rilixtech.communitymaterialtypeface.CommunityMaterial;
 import com.rilixtech.devicontypeface.Devicon;
 import com.rilixtech.dripiconstypeface.Dripicons;
@@ -58,10 +59,35 @@ public class ProgramButtonsSlice extends AbilitySlice {
         super.onStart(intent);
         super.setUIContent(ResourceTable.Layout_ability_program_buttons);
 
+        addFacebookButton();
         addAllModuleButtons();
     }
 
+    private void addFacebookButton() {
+        // Adds the Facebook Login Button as displayed in the README
+        MaterialFancyButton facebookLoginBtn = new MaterialFancyButton(this);
+        facebookLoginBtn.setText("Login with Facebook");
+        facebookLoginBtn.setBackgroundColor(Color.getIntColor("#3b5998"));
+        facebookLoginBtn.setFocusBackgroundColor(Color.getIntColor("#5474b8"));
+        facebookLoginBtn.setTextSize(17);
+        facebookLoginBtn.setRadius(16);
+        facebookLoginBtn.setIconPadding(16, 32, 16, 32);
+        facebookLoginBtn.setIconFont("fontawesome-font-v4.7.ttf");
+        char facebookIconUnicodeId = (char) 0xf082;
+        facebookLoginBtn.setIcon(facebookIconUnicodeId);
+        facebookLoginBtn.setIconPosition(MaterialFancyButton.POSITION_LEFT);
+        facebookLoginBtn.setFontIconSize(30);
+
+        ComponentContainer.LayoutConfig layoutConfig =
+                new ComponentContainer.LayoutConfig(MATCH_CONTENT, MATCH_CONTENT);
+        layoutConfig.setMarginBottom(12);
+        ComponentContainer container = (ComponentContainer)
+                findComponentById(ResourceTable.Id_programbuttons_container);
+        container.addComponent(facebookLoginBtn, layoutConfig);
+    }
+
     private void addAllModuleButtons() {
+        // Adds one button with an Icon corresponding to each Module
         addButtonToLayout(CommunityMaterial.Icon.CMDI_LIGHTBULB);
         addButtonToLayout(Devicon.Icon.DEVI_UBUNTU_PLAIN);
         addButtonToLayout(Dripicons.Icon.DRPI_ARCHIVE);

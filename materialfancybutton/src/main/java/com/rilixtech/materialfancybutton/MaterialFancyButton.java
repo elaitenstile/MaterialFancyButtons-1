@@ -76,8 +76,8 @@ public class MaterialFancyButton extends DirectionalLayout {
     private int mRadiusBottomLeft = 0;
     private int mRadiusBottomRight = 0;
 
-    private boolean mEnabled;
-    private boolean mTextAllCaps;
+    private boolean mEnabled = true;
+    private boolean mTextAllCaps = false;
 
     private Font mTextTypeFace = null;
     private Font mIconTypeFace = null;
@@ -1190,7 +1190,12 @@ public class MaterialFancyButton extends DirectionalLayout {
         if (callerContext instanceof AbilityContext) {
             mIconTypeFace = FontUtil.findFont((AbilityContext) callerContext, fontName, null);
             setupFontIconView();
+            if (mFontIconView == null) {
+                mFontIconView = new Text(getContext());
+                needsUpdate = true;
+            }
             mFontIconView.setFont(mIconTypeFace);
+            setupView();
         }
     }
 
